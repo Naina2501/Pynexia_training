@@ -1,0 +1,1 @@
+Place your own verified project screenshots or profile image in this folder. Use descriptive names such as salon-dashboard.png and alumni-portal.png. Update the relevant image paths in index.html when adding images.
