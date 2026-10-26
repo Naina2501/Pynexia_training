@@ -1,49 +1,107 @@
 # Naina Bahuriya — Personal Portfolio
 
-A responsive portfolio made with semantic HTML, organized CSS, and vanilla JavaScript.
+A personal portfolio website showcasing my skills, professional experience, education, and software development projects.
 
-## Folder structure
+## About the Project
+
+This portfolio presents my background as a Full Stack Developer, with experience building responsive web applications, REST APIs, database-driven systems, and AI-powered solutions.
+
+## Features
+
+- Responsive and modern user interface
+- Professional introduction and about section
+- Technical skills and technologies
+- Professional experience and education
+- Featured software development projects
+- Contact information and social links
+- Mobile-friendly navigation
+- Scroll animations and progress indicator
+- Contact form validation
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Lucide Icons
+- Git and GitHub
+- Vercel for deployment
+
+## Featured Projects
+
+### 1. AI-Powered Salon Management Platform
+
+A salon management application integrating MERN-stack technologies, FastAPI, and OpenAI API capabilities.
+
+**Technologies:** React.js, Node.js, Express.js, FastAPI, MongoDB, OpenAI API
+
+**Key Features:**
+- Customer and appointment management
+- Salon management dashboard
+- Appointment updates and customer workflows
+- AI-powered styling recommendations
+
+### 2. Alumni Networking Web Portal
+
+A web application designed to help alumni connect, share career opportunities, and participate in professional communities.
+
+**Technologies:** Python, Django, SQLite
+
+**Key Features:**
+- Alumni networking and communication
+- Career-focused groups
+- Administrative moderation
+
+## Project Structure
 
 ```text
-Naina_Bahuriya_Portfolio/
+portfolio/
 ├── index.html
+├── README.md
 ├── css/
 │   └── style.css
 ├── js/
 │   ├── main.js
 │   └── form-validation.js
-├── assets/
-│   └── images/
-│       └── README.md
-└── README.md
+└── assets/
+    └── images/
 ```
 
-## Run locally
+## Getting Started
 
-1. Extract the ZIP.
-2. Open the folder in VS Code.
-3. Open `index.html` with the Live Server extension, or double-click it to open in a browser.
-4. No package installation or build process is needed.
+### Prerequisites
 
-## How the code is separated
+- A modern web browser
+- Visual Studio Code (recommended)
+- Live Server extension for Visual Studio Code (optional)
 
-- `index.html`: page structure and portfolio content.
-- `css/style.css`: colors, layout, responsive breakpoints, and animations.
-- `js/main.js`: mobile navigation, year, scroll progress, and reveal animations.
-- `js/form-validation.js`: contact form validation and field-level messages.
-- `assets/images/`: place verified project screenshots, profile photo, or other local images here.
+### Run Locally
 
-## Before publishing
+1. Open the portfolio folder in Visual Studio Code.
+2. Open `index.html` in your browser, or right-click the file and select **Open with Live Server**.
+3. Explore the portfolio sections and project details.
 
-- Double-check the phone number and spelling of location details.
-- Replace the general GitHub profile links on project cards with direct repository links when available.
-- Only add screenshots, metrics, or project claims that represent your actual work.
-- The contact form validates on the client only; it does not send or store messages. Connect a backend or form service before using it to receive real inquiries.
-- Test the mobile layout, keyboard navigation, and links on your own device.
+No package installation or build process is required for the static website.
 
-## Suggested next improvements
+## Deployment
 
-1. Add a real project screenshot for each project.
-2. Add a downloadable resume PDF if you want one publicly available.
-3. Connect the contact form to a backend or trusted form provider.
-4. Add a custom favicon and social preview image.
+The portfolio can be deployed using Vercel.
+
+1. Import the GitHub repository into Vercel.
+2. Set the Root Directory to `portfolio` if the website is stored in that folder.
+3. Select **Other** as the Framework Preset if necessary.
+4. Deploy the project.
+
+## Author
+
+**Naina Bahuriya**
+
+- **Location:** Ballarshah, Maharashtra, India
+- **Email:** nainabahuriya257@gmail.com
+- **LinkedIn:** https://linkedin.com/in/naina-bahuriya-3774b9267
+- **GitHub:** https://github.com/Naina2501
+- **Portfolio:** https://dev-protfolio-seven.vercel.app/
+
+## License
+
+This project is intended to showcase my personal skills and software development work. Please contact me before reusing personal content, branding, or project-specific assets.
