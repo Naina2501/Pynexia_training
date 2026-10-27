@@ -1,0 +1,152 @@
+/* ===========================
+   LIGHT THEME (DEFAULT)
+=========================== */
+
+:root{
+
+    --primary:#6C63FF;
+    --primary-hover:#584ff7;
+
+    --background:#f5f7fb;
+
+    --card:#ffffff;
+
+    --text:#222;
+
+    --text-light:#666;
+
+    --border:#dddddd;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ===========================
+   DARK THEME
+=========================== */
+
+body.dark{
+
+    --primary:#7C74FF;
+    --primary-hover:#9089ff;
+
+    --background:#161B22;
+
+    --card:#21262D;
+
+    --text:#F5F5F5;
+
+    --text-light:#B5B5B5;
+
+    --border:#30363D;
+
+    --shadow:0 10px 30px rgba(0,0,0,.45);
+
+}
+
+/* ===========================
+   APPLY VARIABLES
+=========================== */
+
+body{
+
+    background:var(--background);
+    color:var(--text);
+
+    transition:.35s ease;
+
+}
+
+.header,
+.card,
+.filter,
+.empty{
+
+    background:var(--card);
+
+    color:var(--text);
+
+    box-shadow:var(--shadow);
+
+    transition:.35s ease;
+
+}
+
+input,
+textarea,
+select{
+
+    background:var(--card);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    transition:.35s ease;
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:var(--text-light);
+
+}
+
+.search-box{
+
+    background:var(--background);
+
+}
+
+.logo i,
+.card h2,
+.stats h3{
+
+    color:var(--primary);
+
+}
+
+button{
+
+    background:var(--primary);
+
+}
+
+button:hover{
+
+    background:var(--primary-hover);
+
+}
+
+.filter{
+
+    background:var(--card);
+
+    color:var(--text);
+
+}
+
+.filter.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+footer{
+
+    color:var(--text-light);
+
+}
+
+*{
+
+    transition:
+    background .30s,
+    color .30s,
+    border-color .30s,
+    box-shadow .30s;
+
+}

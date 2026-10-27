@@ -1,0 +1,558 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--background);
+    color:#222;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 40px;
+
+   background:var(--card);
+
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo i{
+    color:#6C63FF;
+    font-size:28px;
+}
+
+.logo h1{
+    font-size:28px;
+    font-weight:700;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.search-box{
+    display:flex;
+    align-items:center;
+
+    background:#f3f4f8;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    width:320px;
+}
+
+.search-box input{
+
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+
+    margin-left:10px;
+
+    font-size:15px;
+}
+
+/* ===========================
+   THEME BUTTON
+=========================== */
+
+#themeBtn{
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#6C63FF;
+    color:white;
+
+    font-size:18px;
+
+    transition:.3s;
+}
+
+#themeBtn:hover{
+
+    transform:rotate(20deg);
+
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+
+.container{
+
+    display:grid;
+
+    grid-template-columns:340px 1fr;
+
+    gap:30px;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    margin-bottom:20px;
+
+    color:#6C63FF;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+input,
+textarea,
+select{
+
+    padding:14px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+}
+
+textarea{
+
+    resize:none;
+
+    height:100px;
+
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    background:#6C63FF;
+
+    color:white;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:var(--primary-hover);
+
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    text-align:center;
+
+}
+
+.stats div{
+
+    flex:1;
+
+}
+
+.stats h3{
+
+    color:#6C63FF;
+
+    font-size:30px;
+
+}
+
+/* ===========================
+   FILTER BUTTONS
+=========================== */
+
+.filters{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.filter{
+
+    background:white;
+
+    color:#444;
+
+    border:1px solid var(--border);
+
+    padding:12px 20px;
+
+}
+
+.filter.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ===========================
+   TASK LIST
+=========================== */
+
+.task-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* Empty message */
+
+.empty{
+
+    background:white;
+
+    padding:60px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    color:#888;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#888;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.container{
+
+grid-template-columns:1fr;
+
+}
+
+.header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.search-box{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.header{
+
+padding:20px;
+
+}
+
+.container{
+
+padding:20px;
+
+}
+
+.stats{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.filters{
+
+flex-wrap:wrap;
+
+}
+
+}
+/* ===========================
+   TASK CARD
+=========================== */
+
+.task-card{
+
+    background:var(--card);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.task-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.task-left{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.task-left h3{
+
+    margin-bottom:8px;
+
+}
+
+.task-left p{
+
+    color:var(--text-light);
+
+    margin-bottom:10px;
+
+}
+
+.task-info{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    font-size:14px;
+
+}
+
+.priority{
+
+    color:white;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+.priority.high{
+
+    background:#ff4d4d;
+
+}
+
+.priority.medium{
+
+    background:#ff9800;
+
+}
+
+.priority.low{
+
+    background:#4caf50;
+
+}
+
+.overdue{
+
+    color:red;
+
+    font-weight:bold;
+
+}
+
+.completed h3{
+
+    text-decoration:line-through;
+
+    opacity:.7;
+
+}
+
+.task-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.edit-btn{
+
+    background:#2196f3;
+
+}
+
+.delete-btn{
+
+    background:#e53935;
+
+}
+
+/* ===========================
+   TOAST
+=========================== */
+
+.toast{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    background:#333;
+
+    color:#fff;
+
+    padding:15px 20px;
+
+    border-radius:10px;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
