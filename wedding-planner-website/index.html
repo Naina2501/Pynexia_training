@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thoughtfully planned weddings and unforgettable celebrations.">
+  <title>Ever After | Wedding & Event Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#home">Ever <span>After</span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">WEDDINGS · EVENTS · MEMORIES</p>
+        <h1>Your love story,<br><em>beautifully planned.</em></h1>
+        <p>From intimate ceremonies to grand celebrations, we turn your vision into a day you will treasure forever.</p>
+        <a class="button" href="#contact">Plan Your Wedding</a>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div>
+        <p class="eyebrow">A LITTLE ABOUT US</p>
+        <h2>Thoughtful details.<br><em>Meaningful moments.</em></h2>
+      </div>
+      <div>
+        <p>We bring creativity, care, and careful coordination to every celebration. Our goal is to make planning feel joyful while creating an event that reflects your unique story.</p>
+        <div class="stats">
+          <div><strong>25+</strong><span>Events planned</span></div>
+          <div><strong>100%</strong><span>Heart in every detail</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <p class="eyebrow">WHAT WE DO</p>
+      <h2>Made for your <em>moment</em></h2>
+      <div class="card-grid">
+        <article class="service-card">
+          <span>01</span><h3>Full Wedding Planning</h3>
+          <p>From the first idea to the final farewell, we coordinate every detail.</p>
+        </article>
+        <article class="service-card">
+          <span>02</span><h3>Décor & Styling</h3>
+          <p>Thoughtful flowers, colors, lighting, and details that bring your vision to life.</p>
+        </article>
+        <article class="service-card">
+          <span>03</span><h3>Event Coordination</h3>
+          <p>A seamless celebration with vendors, schedules, and logistics in sync.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section portfolio" id="portfolio">
+      <p class="eyebrow">SELECTED CELEBRATIONS</p>
+      <h2>Moments we've <em>designed</em></h2>
+      <div class="gallery">
+        <article class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Romantic wedding ceremony setup">
+          <div><h3>The Garden Wedding</h3><p>Romantic · Outdoor</p></div>
+        </article>
+        <article class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=85" alt="Elegant wedding reception tables">
+          <div><h3>An Evening in Bloom</h3><p>Elegant · Reception</p></div>
+        </article>
+        <article class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=85" alt="Wedding table decorated with flowers">
+          <div><h3>Blush & Gold</h3><p>Classic · Intimate</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section experience" id="skills">
+      <p class="eyebrow">OUR APPROACH</p>
+      <h2>Creativity meets <em>coordination</em></h2>
+      <div class="skill-list">
+        <span>Event planning</span><span>Budget management</span>
+        <span>Vendor coordination</span><span>Floral & décor styling</span>
+        <span>Timeline management</span><span>Client communication</span>
+      </div>
+      <div class="education">
+        <h3>Education & Professional Development</h3>
+        <p>Event management, hospitality, design, and hands-on planning experience.</p>
+        <small>Customize this section with your real qualifications and experience.</small>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">LET'S MAKE IT HAPPEN</p>
+      <h2>Tell us about your <em>day.</em></h2>
+      <p class="contact-intro">Share a few details and let's start planning something unforgettable.</p>
+      <form id="contact-form">
+        <div class="form-row">
+          <label>Your name<input name="name" type="text" placeholder="Full name" required></label>
+          <label>Email address<input name="email" type="email" placeholder="you@example.com" required></label>
+        </div>
+        <div class="form-row">
+          <label>Event type
+            <select name="eventType" required>
+              <option value="">Choose an event</option>
+              <option>Wedding</option><option>Engagement</option>
+              <option>Reception</option><option>Corporate event</option>
+              <option>Other celebration</option>
+            </select>
+          </label>
+          <label>Event date<input name="eventDate" type="date"></label>
+        </div>
+        <label>Tell us your vision<textarea name="message" rows="4" placeholder="Venue, guest count, ideas, or questions..." required></textarea></label>
+        <button class="button" type="submit">Send Enquiry</button>
+        <p id="form-message" role="status" aria-live="polite"></p>
+      </form>
+      <p class="demo-note">Demo form: submissions are not sent to a server.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#home">Ever <span>After</span></a>
+    <p>Made with care for life's most meaningful moments.</p>
+    <small>© <span id="year"></span> Ever After Events</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
