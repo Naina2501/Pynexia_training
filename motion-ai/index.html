@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotionAI - AI Video Generator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span class="logo-icon">▶</span>
+                <h2>MotionAI</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+                <p class="menu-heading">WORKSPACE</p>
+
+                <a href="#" class="menu-item active">
+                    <span>✦</span> AI Generator
+                </a>
+
+                <a href="#history" class="menu-item">
+                    <span>◷</span> My Videos
+                </a>
+
+                <a href="#styles" class="menu-item">
+                    <span>▧</span> Styles
+                </a>
+
+                <p class="menu-heading">SETTINGS</p>
+
+                <a href="#settings" class="menu-item">
+                    <span>⚙</span> Settings
+                </a>
+
+                <a href="#help" class="menu-item">
+                    <span>?</span> Help Center
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="user-profile">
+                    <div class="user-avatar">U</div>
+                    <div>
+                        <h4>My Workspace</h4>
+                        <p>Free Plan</p>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="topbar">
+
+                <div>
+                    <h2>AI Video Generator</h2>
+                    <p>Create amazing videos using AI</p>
+                </div>
+
+                <div class="topbar-right">
+                    <span class="credit-badge">✦ 100 Credits</span>
+                    <div class="profile-avatar">U</div>
+                </div>
+
+            </header>
+
+
+            <!-- Generator Section -->
+            <section class="generator-section">
+
+                <div class="section-heading">
+                    <h1>Turn your imagination into videos</h1>
+                    <p>Describe your idea and let AI bring it to life.</p>
+                </div>
+
+
+                <!-- Prompt Card -->
+                <div class="generator-card">
+
+                    <div class="card-heading">
+                        <h3>Describe your video</h3>
+                        <span class="ai-badge">✦ AI POWERED</span>
+                    </div>
+
+                    <form id="generator-form">
+
+                        <textarea
+                            id="prompt-input"
+                            placeholder="Example: A beautiful cinematic sunset over the ocean, waves gently hitting the beach, birds flying across the orange sky..."
+                            maxlength="1000"
+                            required
+                        ></textarea>
+
+                        <div class="prompt-footer">
+                            <span id="character-count">0 / 1000</span>
+                            <button type="button" id="clear-prompt">Clear</button>
+                        </div>
+
+
+                        <!-- Style Selection -->
+                        <div class="settings-grid" id="styles">
+
+                            <div class="setting-group">
+                                <label for="style-select">Video Style</label>
+
+                                <select id="style-select">
+                                    <option value="cinematic">Cinematic</option>
+                                    <option value="realistic">Realistic</option>
+                                    <option value="anime">Anime</option>
+                                    <option value="3d-animation">3D Animation</option>
+                                    <option value="fantasy">Fantasy</option>
+                                </select>
+                            </div>
+
+
+                            <div class="setting-group">
+                                <label for="duration-select">Duration</label>
+
+                                <select id="duration-select">
+                                    <option value="5">5 Seconds</option>
+                                    <option value="10">10 Seconds</option>
+                                </select>
+                            </div>
+
+
+                            <div class="setting-group">
+                                <label for="ratio-select">Aspect Ratio</label>
+
+                                <select id="ratio-select">
+                                    <option value="16:9">Landscape (16:9)</option>
+                                    <option value="9:16">Portrait (9:16)</option>
+                                    <option value="1:1">Square (1:1)</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Generate Button -->
+                        <button type="submit" id="generate-btn">
+                            <span>✦</span>
+                            Generate Video
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- Progress Section -->
+                <div class="progress-card" id="progress-section">
+
+                    <div class="progress-header">
+                        <h3>Generation Progress</h3>
+                        <span id="progress-percent">0%</span>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-bar"></div>
+                    </div>
+
+                    <p id="progress-status">Waiting to generate your video...</p>
+
+                </div>
+
+
+                <!-- Video Preview -->
+                <div class="preview-card">
+
+                    <div class="preview-header">
+                        <h3>Video Preview</h3>
+                        <span id="video-status">No video generated</span>
+                    </div>
+
+                    <div class="video-container" id="video-container">
+
+                        <div class="empty-preview" id="empty-preview">
+                            <div class="play-icon">▶</div>
+                            <h3>Your video will appear here</h3>
+                            <p>Enter a prompt above to create your first video.</p>
+                        </div>
+
+                        <video
+                            id="video-player"
+                            preload="metadata"
+                            playsinline
+                            hidden
+                        ></video>
+
+                    </div>
+
+
+                    <!-- Custom Video Controls -->
+                    <div class="video-controls" id="video-controls" hidden>
+
+                        <button id="play-pause-btn" type="button">▶</button>
+
+                        <span id="current-time">00:00</span>
+
+                        <input
+                            type="range"
+                            id="seek-bar"
+                            min="0"
+                            max="100"
+                            value="0"
+                        >
+
+                        <span id="total-time">00:00</span>
+
+                        <button id="mute-btn" type="button">🔊</button>
+
+                        <input
+                            type="range"
+                            id="volume-control"
+                            min="0"
+                            max="1"
+                            step="0.1"
+                            value="1"
+                        >
+
+                    </div>
+
+
+                    <!-- Download -->
+                    <div class="download-section">
+
+                        <div>
+                            <h4>Export your video</h4>
+                            <p>Download your generated video.</p>
+                        </div>
+
+                        <button id="download-btn" disabled>
+                            ↓ Download Video
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- History -->
+                <section class="history-section" id="history">
+
+                    <div class="history-heading">
+                        <div>
+                            <h2>Recent Videos</h2>
+                            <p>Your previously generated videos</p>
+                        </div>
+                    </div>
+
+                    <div class="history-grid" id="history-grid">
+
+                        <div class="history-empty">
+                            <p>No videos generated yet.</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+            <footer class="footer">
+                <p>© 2026 MotionAI. Create something amazing.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

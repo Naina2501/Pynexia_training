@@ -1,0 +1,756 @@
+
+/* ================================
+   1. GLOBAL SETTINGS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0b0d14;
+    --sidebar: #10121c;
+    --card: #151824;
+    --card-light: #1b1f2e;
+    --border: #292d3e;
+    --text: #f5f5fa;
+    --muted: #969bad;
+    --purple: #8b5cf6;
+    --purple-light: #a78bfa;
+    --green: #22c55e;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================================
+   2. MAIN LAYOUT
+================================ */
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================================
+   3. SIDEBAR
+================================ */
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px;
+    margin-bottom: 45px;
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    border-radius: 12px;
+    font-size: 17px;
+}
+
+.logo h2 {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.menu-heading {
+    color: #70758a;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 25px 10px 13px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 12px;
+    margin-bottom: 6px;
+    border-radius: 9px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.menu-item span {
+    font-size: 18px;
+}
+
+.menu-item:hover {
+    background: var(--card-light);
+    color: white;
+}
+
+.menu-item.active {
+    background: linear-gradient(
+        100deg,
+        rgba(139, 92, 246, 0.25),
+        rgba(99, 102, 241, 0.12)
+    );
+    color: var(--purple-light);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+}
+
+.user-avatar,
+.profile-avatar {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    font-weight: 700;
+}
+
+.user-profile h4 {
+    font-size: 12px;
+}
+
+.user-profile p {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* ================================
+   4. MAIN CONTENT
+================================ */
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+}
+
+/* ================================
+   5. TOPBAR
+================================ */
+
+.topbar {
+    min-height: 85px;
+    padding: 18px 40px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar h2 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.topbar p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.credit-badge {
+    background: rgba(139, 92, 246, 0.14);
+    color: var(--purple-light);
+    padding: 9px 14px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ================================
+   6. GENERATOR SECTION
+================================ */
+
+.generator-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 42px 40px;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading h1 {
+    font-size: clamp(24px, 3vw, 32px);
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* ================================
+   7. GENERATOR CARD
+================================ */
+
+.generator-card,
+.progress-card,
+.preview-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 24px;
+}
+
+.card-heading,
+.progress-header,
+.preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.card-heading h3,
+.progress-header h3,
+.preview-header h3 {
+    font-size: 15px;
+}
+
+.ai-badge {
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--purple-light);
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ================================
+   8. PROMPT INPUT
+================================ */
+
+#prompt-input {
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 17px;
+    color: white;
+    outline: none;
+    font-size: 13px;
+    line-height: 1.7;
+    transition: 0.2s;
+}
+
+#prompt-input::placeholder {
+    color: #71768b;
+}
+
+#prompt-input:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.prompt-footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 2px 24px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+#clear-prompt {
+    border: none;
+    background: none;
+    color: var(--purple-light);
+}
+
+/* ================================
+   9. SETTINGS
+================================ */
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.setting-group label {
+    font-size: 12px;
+    color: #c5c8d5;
+    font-weight: 600;
+}
+
+.setting-group select {
+    width: 100%;
+    padding: 12px;
+    color: white;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    font-size: 12px;
+}
+
+.setting-group select:focus {
+    border-color: var(--purple);
+}
+
+.setting-group option {
+    background: var(--card);
+}
+
+/* ================================
+   10. GENERATE BUTTON
+================================ */
+
+#generate-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    background: linear-gradient(100deg, #8b5cf6, #6366f1);
+    box-shadow: 0 5px 20px rgba(139, 92, 246, 0.2);
+    transition: 0.2s;
+}
+
+#generate-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+#generate-btn span {
+    margin-right: 8px;
+}
+
+/* ================================
+   11. PROGRESS CARD
+================================ */
+
+.progress-card {
+    display: none;
+}
+
+.progress-header {
+    margin-bottom: 15px;
+}
+
+#progress-percent {
+    color: var(--purple-light);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background: #292d3e;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #8b5cf6, #6366f1);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+#progress-status {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ================================
+   12. VIDEO PREVIEW
+================================ */
+
+.preview-header {
+    margin-bottom: 20px;
+}
+
+#video-status {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.video-container {
+    width: 100%;
+    min-height: 300px;
+    background: #080a10;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+#video-player {
+    display: block;
+    width: 100%;
+    max-height: 500px;
+    background: black;
+}
+
+#video-player[hidden],
+#video-controls[hidden] {
+    display: none;
+}
+
+.empty-preview {
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.play-icon {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    color: var(--purple-light);
+    background: rgba(139, 92, 246, 0.15);
+    font-size: 22px;
+}
+
+.empty-preview h3 {
+    font-size: 15px;
+    margin-bottom: 9px;
+}
+
+.empty-preview p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ================================
+   13. CUSTOM VIDEO CONTROLS
+================================ */
+
+.video-controls {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 5px;
+}
+
+.video-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+.video-controls span {
+    color: var(--muted);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+#seek-bar {
+    flex: 1;
+    min-width: 30px;
+    accent-color: var(--purple);
+}
+
+#volume-control {
+    width: 65px;
+    accent-color: var(--purple);
+}
+
+/* ================================
+   14. DOWNLOAD SECTION
+================================ */
+
+.download-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.download-section h4 {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.download-section p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+#download-btn {
+    padding: 11px 16px;
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 8px;
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--purple-light);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#download-btn:hover:not(:disabled) {
+    background: rgba(139, 92, 246, 0.3);
+}
+
+/* ================================
+   15. RECENT VIDEOS
+================================ */
+
+.history-section {
+    margin-top: 40px;
+}
+
+.history-heading {
+    margin-bottom: 20px;
+}
+
+.history-heading h2 {
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.history-heading p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.history-empty {
+    grid-column: 1 / -1;
+    padding: 30px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 12px;
+}
+
+/* ================================
+   16. FOOTER
+================================ */
+
+.footer {
+    padding: 22px 40px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* ================================
+   17. RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 210px;
+        min-width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+    }
+
+    .generator-section {
+        padding: 30px 22px;
+    }
+
+    .topbar {
+        padding: 18px 22px;
+    }
+
+    .history-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        width: 65px;
+        min-width: 65px;
+        padding: 20px 8px;
+    }
+
+    .logo {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .logo h2,
+    .menu-heading,
+    .menu-item:not(.active) {
+        display: none;
+    }
+
+    .menu-item {
+        justify-content: center;
+        padding: 13px 5px;
+        font-size: 0;
+    }
+
+    .menu-item span {
+        font-size: 19px;
+    }
+
+    .user-profile {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .user-profile > div:last-child {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 65px;
+        width: calc(100% - 65px);
+    }
+
+    .topbar {
+        padding: 15px;
+    }
+
+    .topbar h2 {
+        font-size: 14px;
+    }
+
+    .topbar p {
+        font-size: 10px;
+    }
+
+    .credit-badge {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .profile-avatar {
+        display: none;
+    }
+
+    .generator-section {
+        padding: 25px 14px;
+    }
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .generator-card,
+    .progress-card,
+    .preview-card {
+        padding: 17px;
+    }
+
+    .history-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-controls {
+        gap: 7px;
+    }
+
+    #volume-control {
+        width: 45px;
+    }
+
+    .download-section {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #download-btn {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 18px 10px;
+    }
+}
